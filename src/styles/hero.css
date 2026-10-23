@@ -1,0 +1,160 @@
+.hero {
+  margin-top: 60px;
+  display: flex;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.8;
+}
+
+h1 {
+  font-family: "poppins", sans-serif;
+  font-size: 8rem;
+  padding: 0 80px;
+  color: var(--dark-red);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.1em;
+}
+
+h2 {
+  font-family: "Lemon Tuesday";
+  font-size: 8rem;
+  padding: 0 80px;
+  color: var(--dark-red);
+  text-transform: uppercase;
+  letter-spacing: -0.1em;
+}
+
+h3 {
+  font-family: "Lemon Tuesday";
+  font-size: 4rem;
+  padding: 0 80px;
+  color: var(--dark-red);
+  text-transform: uppercase;
+}
+
+.intro {
+  font-family: "Montsserat", sans-serif;
+  font-size: 0.8rem;
+  color: var(--dark-red);
+  width: 50%;
+  text-align: left;
+  margin: 40px 0px;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.cv {
+  width: 60%;
+  display: flex;
+  justify-content: right;
+}
+
+.btn-download {
+  font-family: "poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 160px;
+  padding: 0.6rem 1rem;
+  border-radius: 25px;
+  background-color: var(--pink);
+  color: var(--dark-red);
+  text-decoration: none;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+  justify-content: center;
+}
+
+.btn-download:hover {
+  border: 2px solid rgb(193, 129, 185);
+  background-color: transparent;
+  transform: translateY(-2px);
+  flex-wrap: nowrap;
+}
+
+.btn-download svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-image {
+  display: flex;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-3deg);
+  }
+  30% {
+    transform: rotate(3deg);
+  }
+  45% {
+    transform: rotate(-2deg);
+  }
+  60% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+  90% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.hero img {
+  height: 400px;
+  width: auto;
+  padding-right: 100px;
+  animation: wiggle 1s ease 0.5s 1 forwards; /* Plays once after 0.5s delay */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  h1,
+  h2 {
+    font-size: 4rem;
+    padding: 0;
+  }
+
+  .intro {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .hero-image {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .hero img {
+    padding-right: 0px;
+    height: 300px;
+  }
+
+  .cv {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,185 @@
+h4 {
+  font-size: 2.5rem;
+  color: #253f8e;
+  font-family: "Lemon Tuesday";
+  text-transform: uppercase;
+}
+
+.motion {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-img-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.project-img-container img,
+.project-img-container video {
+  cursor: pointer;
+  border-radius: 5%;
+}
+
+.project-img-container video {
+  object-fit: contain;
+}
+
+.project-text-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 60px;
+}
+
+.project-text {
+  font-family: "poppins", sans-serif;
+  font-size: 1rem;
+  color: #253f8e;
+  line-height: 1.2;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-video {
+  display: none;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  height: 400px;
+  width: auto;
+  display: block;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Clicks pass through to the image */
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-title {
+  font-family: "Montsserat", sans-serif;
+  font-size: 1rem;
+  background-color: var(--light-pink);
+  color: var(--dark-red);
+  border-radius: 5px;
+  padding: 8px 16px;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 150%;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  z-index: 50;
+  position: relative;
+  text-align: center;
+  width: 10rem;
+}
+
+@media (max-width: 768px) {
+  h4 {
+    margin-top: 60px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .project-container {
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .project-text-container {
+    margin: 0px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .project-text {
+    width: 90%;
+    max-width: 450px;
+    display: flex;
+    align-self: center;
+  }
+
+  .gallery-item img {
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  /*   .text-badges-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .gallery-badges {
+    flex-wrap: wrap;
+    justify-content: center;
+  } */
+
+  .gallery-item img {
+    height: auto;
+    width: 90%;
+    justify-self: center;
+  }
+
+  .gallery-item video {
+    height: 320px;
+    width: 100%;
+    object-fit: cover;
+  }
+}

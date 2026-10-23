@@ -1,0 +1,84 @@
+#projects h3,
+#projects h4 {
+  margin-bottom: 20px;
+}
+
+.project-cards-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project-card,
+.project-card-sjomat {
+  overflow: hidden;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.project-card img,
+.project-card-sjomat img {
+  position: relative;
+  height: 500px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card img:hover,
+.project-card-sjomat img:hover {
+  transform: scale(1.05);
+}
+
+.project-name {
+  font-family: "Montsserat", sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.799);
+  z-index: 50;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: end;
+  align-items: center;
+  align-self: end;
+  padding: 1em;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  position: absolute;
+  width: 174px;
+  height: 3rem;
+  margin-bottom: 20px;
+  background: #d287cec4;
+}
+
+.text-badges-container {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  #projects {
+    flex-direction: column;
+    display: flex;
+    padding: 60px 0px;
+    align-items: center;
+  }
+
+  .project-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card img {
+    height: 300px;
+  }
+
+  .project-card-sjomat img {
+    height: 200px;
+  }
+}
