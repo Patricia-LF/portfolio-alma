@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --light-pink: #faeaea;
+  --pink: #d287ce;
+  --dark-red: #350d15;
+  --light-grey: #f0f0f0;
+}
+
+@font-face {
+  font-family: "TAN Meringue";
+  src: url("/fonts/TAN MERINGUE.woff2") format("woff2");
+  font-weight: 400; /* or 400 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lemon Tuesday";
+  src: url("/fonts/LemonTuesday.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brittany Signature";
+  src: url("/fonts/BrittanySignatureRegular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  background: linear-gradient(#faeaea, #f0f0f0) fixed;
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+}
+
+main > section {
+  position: relative;
+  z-index: 1;
+  padding: 120px 20px 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.signature-fixed {
+  position: fixed;
+  align-items: left;
+  text-decoration: none;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  top: 1em;
+  left: 1.2em;
+  mix-blend-mode: exclusion;
+  filter: invert(1);
+}
+
+.signature-fixed span {
+  font-family: "Brittany Signature";
+  color: var(--dark-red);
+}
+
+/*Hamburger-btn*/
+.hamburger-btn {
+  position: fixed;
+  top: 1.5em;
+  right: 1.2em;
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 10px;
+  padding: 0;
+  mix-blend-mode: exclusion;
+  filter: invert(1);
+}
+
+.hamb-line {
+  background-color: var(--dark-red);
+  height: 2px;
+  width: 100%;
+}
+
+.nav-top {
+  position: absolute;
+  top: 1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 10;
+}
+
+.nav-link {
+  font-family: "Lemon Tuesday";
+  font-size: 1.5rem;
+  color: var(--dark-red);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+  color: var(--pink);
+}
+
+/* Overlay */
+.main-navigation {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  width: 40%;
+  background-color: #faeaeaeb;
+  display: none; /* JS toggles to flex */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-end;
+}
+
+.close-btn {
+  position: absolute;
+  /*  width: 20px;
+  height: 20px; */
+  top: 1.5em;
+  right: 1em;
+  z-index: 300;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn img {
+  width: 30px;
+  height: 30px;
+  color: var(--dark-red);
+}
+
+.nav-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 2em;
+}
+
+.nav-link-overlay {
+  font-family: "Lemon Tuesday";
+  font-size: 3rem;
+  color: var(--dark-red);
+  text-decoration: none;
+}
+
+.start-btn {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  border: 1px solid var(--pink);
+  color: var(--pink);
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 9999;
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.start-btn:hover {
+  background: var(--pink);
+  color: var(--light-pink);
+}
+
+.start-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  main,
+  header {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* force sections to fill mobile width */
+  main > section,
+  .contact-container,
+  .project-cards-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  h3,
+  h4 {
+    text-align: center;
+  }
+
+  main > section {
+    padding: 40px 20px;
+    margin: 0;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  .nav-top {
+    display: none;
+  }
+
+  .main-navigation {
+    width: 100%;
+  }
+
+  .start-btn {
+    right: 0.8rem;
+  }
+}
