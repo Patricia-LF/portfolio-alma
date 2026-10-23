@@ -84,6 +84,13 @@ h4 {
   cursor: pointer;
 }
 
+.lightbox-open .signature-fixed,
+.lightbox-open .hamburger-btn {
+  mix-blend-mode: normal;
+  filter: none;
+  opacity: 0;
+}
+
 .gallery-item {
   position: relative;
   overflow: hidden;

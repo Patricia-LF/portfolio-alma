@@ -3,18 +3,6 @@ import Image from "next/image";
 export default function Footer({ settings }) {
   return (
     <>
-      {/* Lightbox */}
-      <div className="lightbox" aria-hidden="true">
-        <button className="lightbox-close">✕</button>
-        <img className="lightbox-img" src={null} alt="" />
-        <video
-          className="lightbox-video"
-          controls
-          playsInline
-          preload="metadata"
-        />
-      </div>
-
       <footer>
         <ul className="footer-links">
           {settings?.instagram && (

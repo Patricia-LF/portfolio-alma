@@ -2,6 +2,7 @@ import { client } from "@/sanity/lib/client";
 import { projectBySlugQuery, projectsQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
+import Lightbox from "@/components/Lightbox";
 
 // Generate static paths for all projects
 export async function generateStaticParams() {
@@ -12,7 +13,8 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }) {
-  const project = await client.fetch(projectBySlugQuery, { slug: params.slug });
+  const { slug } = await params;
+  const project = await client.fetch(projectBySlugQuery, { slug });
 
   if (!project) return <p>Project not found</p>;
 
@@ -41,6 +43,7 @@ export default async function ProjectPage({ params }) {
               </div>
             ))}
           </div>
+          <Lightbox />
         </div>
       </section>
     </main>
