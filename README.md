@@ -2,7 +2,7 @@
 
 A custom Next.js portfolio site for graphic design student Alma Hammar, built with Sanity as headless CMS and deployed on Vercel.
 
-**Live site:** [hammargraphics.com](http://hammargraphics.com)
+**Live site:** [hammargraphics.vercel.app](https://hammargraphics.vercel.app)
 
 ![Almas portfolio screenshot](docs/README-img.jpg)
 
@@ -124,6 +124,10 @@ npm run dev
 
 - Site: `http://localhost:3000`
 - Sanity Studio: `http://localhost:3000/studio`
+
+If the dev server runs on a different port (e.g. http://localhost:3001),
+add that origin to Sanity's allowed list:
+sanity.io/manage → your project → API → CORS Origins → Add origin
 
 ---
 

@@ -2,7 +2,7 @@
 
 Den här guiden förklarar hur du redigerar innehållet på din portfolio via Sanity Studio.
 
-**Studio-länk:** [hammargraphics.com/studio](http://hammargraphics.com/studio)  
+**Studio-länk:** [hammargraphics.vercel.app/studio](https://hammargraphics.vercel.app/studio)  
 Du loggar in med ditt Sanity-konto.
 
 ---
