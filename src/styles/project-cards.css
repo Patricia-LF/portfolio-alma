@@ -23,6 +23,7 @@
 .project-card-sjomat img {
   position: relative;
   height: 500px;
+  width: auto; /* Let the image keep its natural width */
   display: block;
   transition: transform 0.3s ease;
 }

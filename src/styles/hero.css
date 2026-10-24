@@ -1,5 +1,5 @@
 .hero {
-  margin-top: 60px;
+  margin-top: 20px;
   display: flex;
 }
 
@@ -47,11 +47,15 @@ h3 {
   color: var(--dark-red);
   width: 50%;
   text-align: left;
-  margin: 40px 0px;
+  margin: 40px 0px 5px;
   line-height: 1.2;
   display: flex;
   flex-direction: column;
-  align-self: center;
+  justify-self: center;
+}
+
+.intro p {
+  margin-bottom: 1em;
 }
 
 .cv {
@@ -75,6 +79,7 @@ h3 {
     background-color 0.2s,
     transform 0.2s;
   justify-content: center;
+  justify-self: center;
 }
 
 .btn-download:hover {
