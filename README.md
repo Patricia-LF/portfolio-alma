@@ -2,8 +2,9 @@
 
 A custom Next.js portfolio site for graphic design student Alma Hammar, built with Sanity as headless CMS and deployed on Vercel.
 
-**Live site:** [hammargraphics.com](http://hammargraphics.com)  
-**GitHub:** [github.com/Patricia-LF/portfolio-alma](https://github.com/Patricia-LF/portfolio-alma)
+**Live site:** [hammargraphics.com](http://hammargraphics.com)
+
+![Almas portfolio screenshot](docs/README-img.jpg)
 
 ---
 
