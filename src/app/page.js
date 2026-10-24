@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import Contact from "@/components/Contact";
+import { PortableText } from "@portabletext/react";
+import BackToTop from "@/components/BackToTop";
 
 export default async function Home() {
   const [projects, settings] = await Promise.all([
@@ -21,7 +23,9 @@ export default async function Home() {
         <div className="hero-text">
           <h2>Alma</h2>
           <h1>Hammar</h1>
-          <p>{settings?.heroText}</p>
+          <div className="intro">
+            {settings?.heroText && <PortableText value={settings.heroText} />}
+          </div>
           {settings?.cv?.asset && (
             <a
               href={settings.cv.asset.url}
@@ -54,15 +58,15 @@ export default async function Home() {
               <Link href={`/projects/${project.slug.current}`}>
                 {project.coverImage ? (
                   <Image
-                    src={urlFor(project.coverImage)
-                      .width(400)
-                      .height(500)
-                      .url()}
+                    src={urlFor(project.coverImage).quality(90).url()}
                     alt={project.title}
-                    width={400}
+                    width={0}
                     height={500}
+                    style={{ width: "auto", height: "500px" }}
+                    sizes="500px"
                   />
                 ) : null}
+                <span className="project-name">{project.title}</span>
               </Link>
             </div>
           ))}
@@ -77,15 +81,15 @@ export default async function Home() {
                 <Link href={`/projects/${project.slug.current}`}>
                   {project.coverImage ? (
                     <Image
-                      src={urlFor(project.coverImage)
-                        .width(400)
-                        .height(500)
-                        .url()}
+                      src={urlFor(project.coverImage).quality(90).url()}
                       alt={project.title}
-                      width={400}
+                      width={0}
                       height={500}
+                      style={{ width: "auto", height: "500px" }}
+                      sizes="500px"
                     />
                   ) : null}
+                  <span className="project-name">{project.title}</span>
                 </Link>
               </div>
             ))}
@@ -93,6 +97,7 @@ export default async function Home() {
         </div>
       </section>
       <Contact settings={settings} />
+      <BackToTop />
     </main>
   );
 }

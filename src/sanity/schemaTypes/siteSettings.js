@@ -7,8 +7,8 @@ export default {
       name: "heroText",
       title: "Hero text",
       description: "The intro text shown next to the portrait on the home page",
-      type: "text",
-      rows: 4,
+      type: "array",
+      of: [{ type: "block" }],
     },
     {
       name: "cv",
