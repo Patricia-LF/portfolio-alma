@@ -19,7 +19,7 @@ export default async function RootLayout({ children }) {
   const settings = await client.fetch(siteSettingsQuery);
 
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
         <Header settings={settings} />
         {children}
