@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Nav from "./Nav";
 
 export default function Header({ settings }) {
@@ -7,9 +6,8 @@ export default function Header({ settings }) {
     <header>
       {/* Fixed signature link */}
       <Link href="/" className="signature-fixed">
-        <svg viewBox="0 0 622 214" xmlns="http://www.w3.org/2000/svg">
-          {/* Your SVG content here */}
-        </svg>
+        <span>Alma</span>
+        <span>Hammar</span>
       </Link>
 
       <Nav settings={settings} />

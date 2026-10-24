@@ -21,8 +21,10 @@ export default async function Home() {
       {/* Hero section */}
       <section className="hero">
         <div className="hero-text">
-          <h2>Alma</h2>
-          <h1>Hammar</h1>
+          <div className="hero-title">
+            <h2>Alma</h2>
+            <h1>Hammar</h1>
+          </div>
           <div className="intro">
             {settings?.heroText && <PortableText value={settings.heroText} />}
           </div>
