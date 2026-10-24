@@ -7,7 +7,8 @@ export const projectsQuery = defineQuery(`
     title,
     slug,
     type,
-    coverImage
+    coverImage,
+    cardSize
   }
 `);
 
@@ -20,7 +21,8 @@ export const projectBySlugQuery = defineQuery(`
     type,
     images[] {
       caption,
-      image
+      image,
+      video
     }
   }
 `);

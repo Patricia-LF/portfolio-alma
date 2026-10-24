@@ -57,6 +57,13 @@ export default {
               options: { hotspot: true },
             },
             {
+              name: "video",
+              title: "Video filename",
+              description:
+                "Filename only, e.g. coffee.mp4 (upload the file to public/assets/motion/)",
+              type: "string",
+            },
+            {
               name: "caption",
               title: "Caption",
               description: "Shown on hover",
