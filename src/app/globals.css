@@ -264,6 +264,7 @@ main > section {
 
   .main-navigation {
     width: 100%;
+    background-color: #faeaea;
   }
 
   .start-btn {
