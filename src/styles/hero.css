@@ -137,6 +137,13 @@ h3 {
     flex-direction: column;
   }
 
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   h1,
   h2 {
     font-size: 4rem;

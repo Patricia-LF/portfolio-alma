@@ -68,8 +68,8 @@ export default async function Home() {
                     sizes="500px"
                   />
                 ) : null}
-                <span className="project-name">{project.title}</span>
               </Link>
+              <span className="project-name">{project.title}</span>
             </div>
           ))}
         </div>
@@ -91,8 +91,8 @@ export default async function Home() {
                       sizes="500px"
                     />
                   ) : null}
-                  <span className="project-name">{project.title}</span>
                 </Link>
+                <span className="project-name">{project.title}</span>
               </div>
             ))}
           </div>

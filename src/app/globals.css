@@ -71,12 +71,12 @@ main > section {
   top: 1em;
   left: 1.2em;
   mix-blend-mode: exclusion;
-  filter: invert(1);
 }
 
 .signature-fixed span {
   font-family: "Brittany Signature";
   color: var(--dark-red);
+  filter: invert(1);
 }
 
 /*Hamburger-btn*/
@@ -95,13 +95,13 @@ main > section {
   height: 10px;
   padding: 0;
   mix-blend-mode: exclusion;
-  filter: invert(1);
 }
 
 .hamb-line {
   background-color: var(--dark-red);
   height: 2px;
   width: 100%;
+  filter: invert(1);
 }
 
 .nav-top {
@@ -130,7 +130,9 @@ main > section {
 /* Overlay */
 .main-navigation {
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   z-index: 200;
   width: 40%;
   background-color: #faeaeaeb;
