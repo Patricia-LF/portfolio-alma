@@ -7,7 +7,9 @@ export default function Lightbox() {
   const lightboxRef = useRef(null);
   const imgRef = useRef(null);
   const videoRef = useRef(null);
+  const closeRef = useRef(null);
   const [mounted, setMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -22,10 +24,14 @@ export default function Lightbox() {
 
     const openLightbox = () => {
       lightbox.style.display = "flex";
+      setIsOpen(true);
+      // Move focus to close button
+      setTimeout(() => closeRef.current?.focus(), 0);
     };
 
     const closeLightbox = () => {
       lightbox.style.display = "none";
+      setIsOpen(false);
       video.pause();
       video.src = "";
       img.src = "";
@@ -62,8 +68,10 @@ export default function Lightbox() {
   if (!mounted) return null;
 
   return createPortal(
-    <div className="lightbox" aria-hidden="true" ref={lightboxRef}>
-      <button className="lightbox-close">✕</button>
+    <div className="lightbox" aria-hidden={!isOpen} ref={lightboxRef}>
+      <button className="lightbox-close" ref={closeRef}>
+        ✕
+      </button>
       <img className="lightbox-img" ref={imgRef} src={null} alt="" />
       <video
         className="lightbox-video"
