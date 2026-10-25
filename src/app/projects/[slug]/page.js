@@ -51,7 +51,7 @@ export default async function ProjectPage({ params }) {
                       width={0}
                       height={400}
                       style={{ width: "auto", height: "400px" }}
-                      sizes="400px"
+                      sizes="(max-width: 768px) 90vw, 800px"
                       className="gallery-img"
                     />
                     <div className="gallery-overlay">

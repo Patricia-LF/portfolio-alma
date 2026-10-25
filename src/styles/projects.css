@@ -170,7 +170,7 @@ h4 {
     align-self: center;
   }
 
-  .gallery-item img {
+  /*  .gallery-item img {
     height: 300px;
     width: 100%;
     object-fit: contain;
@@ -181,7 +181,7 @@ h4 {
     width: 90%;
     justify-self: center;
   }
-
+ */
   .gallery-item video {
     height: 320px;
     width: 100%;
@@ -189,7 +189,7 @@ h4 {
   }
 
   .gallery-img {
-    display: flex;
-    justify-content: center;
+    height: auto !important;
+    width: 90vw !important;
   }
 }
