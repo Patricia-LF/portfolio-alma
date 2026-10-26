@@ -144,9 +144,37 @@ All content is managed via Sanity Studio at `/studio`. See [SANITY-GUIDE.md](./S
 
 ## Deployment
 
-The site is hosted on Vercel and deploys automatically on push to `main`.
+The site is hosted on Vercel and deploys automatically on push to `main`, and also when content is published in Sanity Studio via a webhook.
 
-To add environment variables in Vercel: go to your project → Settings → Environment Variables and add `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET`.
+### Environment variables on Vercel
+
+Go to your project on Vercel → **Settings** → **Environment Variables** and add: `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET`.
+
+Then trigger a redeploy for the variables to take effect.
+
+### Domain setup (Strato → Vercel)
+
+The domain hammargraphics.com is registered at Strato with the following DNS records pointing to Vercel:
+
+- **A record:** `@` → `216.198.79.1`
+- **CNAME:** `www` → `69bf89116708973d.vercel-dns-017.com`
+
+Both `hammargraphics.com` and `www.hammargraphics.com` are added under **Settings → Domains** in the Vercel project.
+
+### CORS — allow Sanity Studio on the live domain
+
+1. Go to [sanity.io/manage](https://sanity.io/manage) → your project → **API** → **CORS Origins**
+2. Add `https://www.hammargraphics.com` with **Allow credentials** enabled
+
+### Sanity webhook — automatic redeploy on publish
+
+To trigger a new Vercel deploy whenever content is published in Sanity Studio:
+
+1. In Vercel: **Settings** → **Git** → **Deploy Hooks** → create a hook for branch `main` and copy the URL
+2. In Sanity: [sanity.io/manage](https://sanity.io/manage) → **API** → **Webhooks** → create a webhook with:
+   - **URL:** the Vercel deploy hook URL
+   - **Dataset:** production
+   - **Trigger on:** Create, Update, Delete
 
 ---
 
